@@ -1,0 +1,86 @@
+@use '../mixins/index' as *;
+
+.agency__Testemonials {
+    width: 100%;
+
+    > .container {
+        display: flex;
+        flex-direction: column;
+
+        gap: 3rem;
+    }
+
+    &-title {
+        text-align: center;
+
+        > h1, > p{
+            font-size: 3.2rem;
+        }
+
+        > p {
+            font-weight: 400;
+            color: #3E3FD8;
+            letter-spacing: 1rem;
+        }
+    }
+
+    &-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+        place-items: center;
+
+        @include screenSize(40rem) {
+            & {
+                column-gap: 0;
+                row-gap: 2rem;
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        &_card {
+            width: 80%;
+            border-radius: 2rem;
+
+            background-color: hsl(0, 0, 95%);
+            padding: 1rem;
+
+            transition: border .5s ease;
+
+            @include screenSize(80rem) {
+                & {
+                    width: 100%;
+                }
+            }
+            @include screenSize(40rem) {
+                & {
+                    width: 80%;
+                }
+            }
+
+            &:hover { 
+                border: 3px solid #3E3FD8;
+            }
+
+            &-head {
+                display: flex;
+                gap: 2rem;
+
+                > h3, > small {
+                    margin-left: 1rem;
+                }
+                
+                h3 {
+                    font-weight: 500;
+                    font-size: 1.8rem;
+                }
+            }
+
+            &-body {
+                p {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,106 @@
+@use '../mixins/index' as *;
+
+.agency__boost {
+    width: 100%;
+
+    & > .container {
+        display: flex;
+        flex-direction: column;
+
+        gap: 5rem;
+    }
+
+    &-title {
+        display: flex;
+        flex-direction: column;
+        
+        text-align: center;
+
+        gap: 2rem;
+
+        width: 30%;
+
+        @include screenSize(40rem) {
+            & {
+                width: 100%;
+            }
+        }
+
+        > h1 {
+            font-size: 3.2rem;
+        }
+
+        > p {
+            font-size: 1.4rem;
+        }
+    }
+
+    &-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+        place-items: center;
+
+        @include screenSize(40rem) {
+            & {
+                column-gap: 0;
+                row-gap: 2rem;
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+        
+        &_card {
+            width: 75%;
+
+            @include screenSize(80rem) {
+                & {
+                    width: 100%;
+                }
+            }
+
+            background-color: hsl(0, 0, 95%);
+
+            border-radius: 2rem;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start !important;
+
+            gap: 2rem;
+
+            transition: all .5s ease;
+
+            padding: 1rem;
+
+            &-img {
+                border-radius: 2rem;
+
+                > img {
+                    padding: .5rem;
+                }
+            }
+
+            &-paragraph {
+                > h2 {
+                    font-size: 1.8rem;
+                }
+
+                > p {
+                    font-size: 1.4rem;
+                }
+            }
+
+            &-readMore {
+
+                width: 30%;
+                display: flex;
+                justify-content: space-between !important;
+
+                > small {
+                    font-size: 1rem;
+                    color: #3E3FD8;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+@use '../mixins/index' as *;
+
+.agency__footer {
+    margin-top: 5rem;
+    padding-top: 5rem;
+
+    width: 100%;
+
+    background-color: #3E3FD8;
+    color: #fff;
+
+    > .container{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    &-info {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2rem;
+
+        @include screenSize(80rem) {
+            & {
+                row-gap: 2rem;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @include screenSize(40rem) {
+            & {
+                column-gap: 0;
+                row-gap: 2rem;
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        > ul {
+            list-style: none;
+
+            > li {
+                margin-bottom: .5rem;
+                font-size: 1.4rem;
+
+                & > h1, & > h3 {
+                    margin-bottom: 1rem;
+                }
+
+                & > h1 {
+                    font-size: 2.4rem;
+                }
+
+                display: flex;
+                gap: 2rem;
+
+                & > div {
+                    width: 55px;
+                    height: 55px;
+
+                    display: grid;
+                    place-items: center;
+
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+
+                    margin-top: 2rem;
+                }
+            }
+        }
+    }
+
+    &-copyRight {
+        > small {
+            font-size: 1.4rem;
+        }
+    }
+}

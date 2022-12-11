@@ -1,0 +1,94 @@
+@use '../mixins/index' as *;
+
+.agency__navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 1rem 0;
+    cursor: pointer;
+
+    .container {
+        display: flex;
+        justify-content: space-between !important;        
+    }
+
+    &-logo {
+        width: 25%;
+
+        h1 {
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 52px;
+            color: var(--blue-primary);
+        }
+    }
+
+    &-nav {
+        width: 45%;
+
+        &_list {
+            list-style: none;
+
+            display: flex;
+            justify-content: space-between !important;
+
+            font-size: 1.6rem;
+
+            color: var(--black-primary);
+
+            @include screenSize(40rem) {
+                & {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &-square {
+        width: 35%;
+
+        &_button {
+            position: relative;
+            z-index: 2;
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            button {
+                cursor: pointer;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 26px;
+                color: var(--blue-primary);
+                background-color: var(--blueLight-primary);
+                border-radius: 20px;
+                border: none;
+                padding: 1rem 2rem;
+            }
+        }
+
+        &_item {
+            width: 100vw;
+            height: 100vh;
+    
+            position: absolute;
+            top: 0;
+            left: 70%;
+    
+            background-color: var(--blue-primary);
+            border-radius: 60px;
+
+            z-index: 1;
+            
+            @include screenSize(40rem) {
+                & {
+                    display: none;
+                }
+            }
+        }
+    }
+}

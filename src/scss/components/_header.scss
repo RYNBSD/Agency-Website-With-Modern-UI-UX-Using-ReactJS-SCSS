@@ -1,0 +1,194 @@
+@use '../mixins/index' as *;
+
+.agency__header {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--blueLight-primary);
+
+    @include screenSize(40rem) {
+        & {
+            height: fit-content;
+        }
+    }
+
+    @include screenSize(80rem) {
+        & {
+            padding-top: 10rem;
+            height: fit-content;
+        }
+    }
+
+
+    .container {
+        display: grid;
+
+        height: 100%;
+
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1rem;
+        place-items: center;
+
+        @include screenSize(40rem) {
+            & {
+                column-gap: 0;
+                row-gap: 2rem;
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+
+    &-desc {
+        display: flex;
+        flex-direction: column;
+
+        gap: 1rem;
+
+        width: 100%;
+
+        @include screenSize(40rem) {
+            & {
+                width: 100vw;
+            }
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: 64px;
+            line-height: 92px;
+            color: var(--black-primary);
+
+            @include screenSize(40rem) {
+                & {
+                    font-size: 32px;
+                }
+            }
+        }
+
+        > p {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 26px;
+            color: var(--gray-primary);
+        }
+
+        &_buttons {
+            width: 95%;
+
+            margin-left: 1rem;
+
+            display: flex;
+            justify-content: space-between !important;
+            
+
+            &-getStarted {
+                background: var(--blue-primary);
+                border-radius: 20px;
+
+                display: flex;
+                gap: .5rem;
+                padding: 1rem;
+
+                > p {
+                    color: var(--white-primary);
+                    text-transform: capitalize;
+
+                    font-size: 1.5rem;
+                }
+
+                &_arrow {
+                    height: 2.3rem;
+                    width: 2.3rem;
+
+                    background-color: var(--white-primary);
+                    border-radius: .5rem;
+
+                    display: flex;
+                }
+            }
+
+            &-watchOurVideos {
+                display: flex;
+                gap: 1rem;
+
+                > div {
+                    width: 4.5rem;
+                    height: 4.5rem;
+                    
+                    display: flex;
+
+                    background-color: var(--gray-primary);
+                    border-radius: 50%;
+
+                    > button {
+                        width: 4rem;
+                        height: 4rem;
+    
+                        background-color: var(--blue-primary);
+                        padding: .75rem;
+
+                        border-radius: 50%;
+                        border: none;
+                    
+                        display: flex;
+                    }
+                }
+
+                > p {
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 26px;
+                    color: var(--gray-primary);
+                }
+            }
+        }
+    }
+
+    &-img {
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+
+        .square-pink {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            
+            width: 75%;
+            height: 75%;
+            
+            background-color: rgba(239, 139, 141, 0.75);;
+            border-radius: 3rem;
+            
+            @include screenSize(40rem) {
+                & {
+                    display: none;
+                }
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            z-index: 3;
+
+            @include screenSize(40rem) {
+                & {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    transform: none;
+                    z-index: initial;
+                }
+            }
+        }
+    }
+}

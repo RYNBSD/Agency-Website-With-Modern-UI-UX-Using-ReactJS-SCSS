@@ -1,0 +1,24 @@
+/* Tools */
+@use './mixins/index' as *;
+
+/* Components Style */
+@use './components/navbar';
+@use './components/header';
+@use './components/marketing';
+@use './components/boost';
+@use './components/solutions';
+@use './components/testimonials';
+@use './components/latest';
+@use './components/join';
+@use './components/footer';
+
+.f-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    height: inherit;
+    margin: auto;
+}
